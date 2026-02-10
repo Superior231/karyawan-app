@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->enum('roles', ['admin', 'superadmin'])->default('admin');
             $table->string('password');
-            $table->string('avatars')->nullable();
+            $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

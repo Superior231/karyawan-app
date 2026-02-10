@@ -27,8 +27,8 @@
                         <span class="nav-text text-dark text-truncate" style="max-width: 150px;">&nbsp;{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="mt-2 dropdown-menu dropdown-menu-end">
-                        <li">
-                            <a class="gap-2 dropdown-item d-flex align-items-center {{ $active == 'profile' ? 'active fw-semibold' : '' }}" href="#">
+                        <li>
+                            <a class="gap-2 dropdown-item d-flex align-items-center {{ $active == 'profile' ? 'active fw-semibold' : '' }}" href="{{ route('profile.index') }}">
                                 <i class='bx bx-user fs-6'></i>
                                 Profile
                             </a>
@@ -62,7 +62,7 @@
             </a>
             <h3 class="py-0 my-0 nav-name-brand ms-2 fw-bold text-primary" id="navNameBrand">Karyawan App</h3>
         </div>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
             aria-label="Close"></button>
     </div>
     <hr class="py-0 my-0 border-light">
@@ -79,7 +79,7 @@
         <div class="profile">
             <ul class="bottom-0 bg-transparent position-absolute list-unstyled w-100">
                 <li class="bg-transparent w-100 d-flex justify-content-between align-items-center">
-                    <a href="#" class="d-flex align-items-center gap-2 {{ $active == 'setting' ? 'active fw-semibold' : '' }}">
+                    <a href="{{ route('profile.index') }}" class="d-flex align-items-center gap-2 {{ $active == 'setting' ? 'active fw-semibold' : '' }}">
                         <div class="avatar">
                             @if (!empty(Auth::user()->avatar))
                                 <img class="img" src="{{ asset('storage/avatars/' . Auth::user()->avatar) }}">

@@ -10,8 +10,10 @@
 
 <body class="bg-soft-blue">
     @include('components.navbar')
-    <section class="container py-3">
+    <div class="d-flex justify-content-end">
         @include('components.toast')
+    </div>
+    <section class="container py-3">
         @yield('content')
         @include('components.footer')
     </section>
