@@ -4,10 +4,9 @@
             <img src="{{ url('assets/img/logo.png') }}" style="width: 40px; height: 40px;" alt="logo">
             {{ config('app.name') }}
         </a>
-        <button class="border-0 shadow-none navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="gap-3 navbar-brand d-flex align-items-center d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
+            <i class='mt-1 bx bx-menu fs-1'></i>
+        </div>
 
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="mx-auto navbar-nav" id="navbarNav1">
@@ -25,17 +24,21 @@
                                 <img class="img" src="https://ui-avatars.com/api/?background=random&name={{ urlencode(Auth::user()->name) }}">
                             @endif
                         </div>
-                        <span class="nav-text text-dark username-count">&nbsp;{{ Auth::user()->name }}</span>
+                        <span class="nav-text text-dark text-truncate" style="max-width: 150px;">&nbsp;{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="mt-2 dropdown-menu dropdown-menu-end">
-                        <li>
-                            <a class="dropdown-item {{ $active == 'profile' ? 'active fw-semibold' : '' }}" href="#">Profile</a>
+                        <li">
+                            <a class="gap-2 dropdown-item d-flex align-items-center {{ $active == 'profile' ? 'active fw-semibold' : '' }}" href="#">
+                                <i class='bx bx-user fs-6'></i>
+                                Profile
+                            </a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault(); logout();">
+                            <a class="gap-2 dropdown-item d-flex align-items-center" href="{{ route('logout') }}"onclick="event.preventDefault(); logout();">
+                                <i class='bx bx-log-out fs-6'></i>
                                 Logout
                             </a>
 
@@ -49,6 +52,50 @@
         </div>
     </div>
 </nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header">
+        <div class="d-flex align-items-center">
+            <a href="{{ route('home.index') }}">
+                <img src="{{ url('/assets/img/logo.png') }}" alt="logo" style="width: 40px; height: 40px;"
+                    class="logo" id="logo">
+            </a>
+            <h3 class="py-0 my-0 nav-name-brand ms-2 fw-bold text-primary" id="navNameBrand">Karyawan App</h3>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+    </div>
+    <hr class="py-0 my-0 border-light">
+    <div class="px-0 py-0 mx-0 offcanvas-body">
+        <ul class="list-unstyled">
+            <li class="{{ $active == 'home' ? 'active' : '' }}">
+                <a href="{{ route('home.index') }}" class="gap-2 d-flex align-items-center">
+                    <i class='bx bxs-home fs-4'></i>
+                    <span class="py-0 my-0">Home</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="profile">
+            <ul class="bottom-0 bg-transparent position-absolute list-unstyled w-100">
+                <li class="bg-transparent w-100 d-flex justify-content-between align-items-center">
+                    <a href="#" class="d-flex align-items-center gap-2 {{ $active == 'setting' ? 'active fw-semibold' : '' }}">
+                        <div class="avatar">
+                            @if (!empty(Auth::user()->avatar))
+                                <img class="img" src="{{ asset('storage/avatars/' . Auth::user()->avatar) }}">
+                            @else
+                                <img class="img" src="https://ui-avatars.com/api/?background=random&name={{ urlencode(Auth::user()->name) }}">
+                            @endif
+                        </div>
+                        <span class="nav-text text-dark text-truncate" style="max-width: 150px;">&nbsp;{{ Auth::user()->name }}</span>
+                    </a>
+                    <i class='bg-transparent bx bx-chevron-right fs-3 me-3'></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 @push('scripts')
     <script>
