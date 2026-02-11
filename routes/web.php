@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProfileController;
@@ -11,6 +12,7 @@ Auth::routes(['register' => false]);  // Register off
 Route::middleware('auth')->group(function() {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::resource('position', PositionController::class);
+    Route::resource('employee', EmployeeController::class);
     
     // Profile
     Route::resource('profile', ProfileController::class);

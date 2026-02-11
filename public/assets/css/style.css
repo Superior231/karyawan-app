@@ -240,6 +240,22 @@ a {
 }
 
 
+/* Avatar */
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
 /* Card */
 .card {
   border-radius: 1rem;
@@ -270,7 +286,8 @@ thead tr th {
 section.profile .user-info:hover {
   border-color: transparent;
 }
-section.profile .logout:hover {
+section.profile .logout:hover,
+section.profile .employee-delete:hover {
   border-color: var(--text-color-danger);
 }
 section.profile .user-avatar {
@@ -287,6 +304,64 @@ section.profile .user-avatar .avatar {
 section.profile .actions .card-body {
   padding: 25px 20px;
 }
+
+
+/* Employees */
+.actions .search-box {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  background-color: var(--soft-blue);
+  border: 1px solid transparent;
+  border-radius: var(--radius-10);
+  padding: 10px 15px;
+  gap: 4px;
+}
+@media (max-width: 768px) {
+    .actions .search-box {
+        width: 100% !important;
+    }
+    .actions .search-box input {
+        width: 100% !important;
+    }
+}
+.actions .search-box input {
+  width: clamp(100px, 35vw, 200px);
+  border: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+  color: var(--text-color-dark);
+}
+.actions .search-box i {
+  color: var(--text-color);
+}
+.actions .search-box:focus-within,
+.actions .search-box:focus-within i {
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+  transition: var(--tran-03);
+}
+
+.employee .avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .employee .avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+.employee .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 /* Modal */
 .modal .modal-dialog .modal-content {

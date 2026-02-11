@@ -16,6 +16,9 @@
                 <li class="nav-item">
                     <a href="{{ route('position.index') }}" class="nav-link {{ $active == 'positions' ? 'active fw-semibold' : '' }} px-4">Positions</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('employee.index') }}" class="nav-link {{ $active == 'employees' ? 'active fw-semibold' : '' }} px-4">Employees</a>
+                </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
@@ -81,6 +84,12 @@
                 <a href="{{ route('position.index') }}" class="gap-2 d-flex align-items-center">
                     <i class='bx bxs-label fs-4'></i>
                     <span class="py-0 my-0">Positions</span>
+                </a>
+            </li>
+            <li class="{{ $active == 'employees' ? 'active' : '' }}">
+                <a href="{{ route('employee.index') }}" class="gap-2 d-flex align-items-center">
+                    <i class="fas fa-users fs-6"></i>
+                    <span class="py-0 my-0">Employees</span>
                 </a>
             </li>
         </ul>
