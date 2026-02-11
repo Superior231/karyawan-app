@@ -153,9 +153,9 @@ class EmployeeController extends Controller
         $employee->update($data);
 
         if ($employee) {
-            return redirect()->route('employee.index')->with('success', 'Karyawan berhasil diperbarui!');
+            return redirect()->route('employee.index')->with('success', 'Karyawan berhasil diupdate!');
         } else {
-            return redirect()->route('employee.index')->with('error', 'Karyawan gagal diperbarui!');
+            return redirect()->route('employee.index')->with('error', 'Karyawan gagal diupdate!');
         }
     }
 

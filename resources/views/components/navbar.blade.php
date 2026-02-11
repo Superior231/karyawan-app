@@ -19,6 +19,11 @@
                 <li class="nav-item">
                     <a href="{{ route('employee.index') }}" class="nav-link {{ $active == 'employees' ? 'active fw-semibold' : '' }} px-4">Employees</a>
                 </li>
+                @if (Auth::user()->roles === 'superadmin')
+                    <li class="nav-item">
+                        <a href="{{ route('admin.index') }}" class="nav-link {{ $active == 'admin' ? 'active fw-semibold' : '' }} px-4">Admin</a>
+                    </li>
+                @endif
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
@@ -92,6 +97,14 @@
                     <span class="py-0 my-0">Employees</span>
                 </a>
             </li>
+            @if (Auth::user()->roles === 'superadmin')
+                <li class="{{ $active == 'admin' ? 'active' : '' }}">
+                    <a href="{{ route('admin.index') }}" class="gap-2 d-flex align-items-center">
+                        <i class='bx bxs-crown fs-4'></i>
+                        <span class="py-0 my-0">Admin</span>
+                    </a>
+                </li>
+            @endif
         </ul>
 
         <div class="profile">

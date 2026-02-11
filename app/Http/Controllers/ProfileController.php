@@ -59,8 +59,8 @@ class ProfileController extends Controller
         $user->name = $request->input('name', $user->name);
         $user->username = $request->input('username', $user->username);
 
-        if ($request->input('password')) {
-            $user->password = Hash::make($request->input('password'));
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
         }
     
         if ($request->hasFile('avatar')) {
@@ -83,7 +83,7 @@ class ProfileController extends Controller
         } else {
             return redirect()->route('profile.index')->with('success', 'Profile gagal diedit!');
         }
-    }    
+    }
 
     public function deleteAvatar($id)
     {
