@@ -2,6 +2,12 @@
 
 **Karyawan App** adalah aplikasi yang digunakan untuk mengelola data karyawan.
 
+Authentication (default):
+| Role | Username | Password |
+| --- | --- | --- |
+| Super Admin | Super Admin | superadmin1234 |
+| Admin | Admin | admin1234 |
+
 ## Requirements
 
 - [Laravel 11](https://laravel.com/docs/11.x)
