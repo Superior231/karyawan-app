@@ -5,8 +5,14 @@
     --soft-blue: #f1f5fb;
     --bg-white: #FFFFFF;
     --bg-secondary: #6d747d;
+    --bg-success: #188754;
 
     --card-color: #ffff;
+
+    --bg-primary-opacity: rgba(69, 100, 229, 0.1);
+    --bg-success-opacity: rgba(0, 128, 0, 0.1);
+    --bg-red-opacity: rgba(255, 77, 79, 0.1);
+    --bg-warning-opacity: rgba(255, 215, 0, 0.1);
 
     /* Text Color */
     --text-color: #707070;
@@ -237,6 +243,32 @@ a {
 }
 .offcanvas .offcanvas-body ul li:hover {
     background-color: var(--soft-blue);
+}
+
+
+/* Dashboard */
+.dashboard .col {
+  color: var(--text-color-dark);
+}
+.dashboard .bg-icon-employee,
+.dashboard .bg-icon-position {
+  color: var(--bs-primary);
+  background-color: var(--bg-primary-opacity) !important;
+  border-radius: var(--radius-10);
+}
+.dashboard .bg-icon-active {
+  background-color: var(--bg-success-opacity) !important;
+  border-radius: var(--radius-10);
+}
+.dashboard .bg-icon-inactive {
+  background-color: var(--bg-red-opacity) !important;
+  border-radius: var(--radius-10);
+}
+.dashboard .card-active:hover {
+  border-color: var(--bg-success);
+}
+.dashboard .card-inactive:hover {
+  border-color: var(--text-color-danger);
 }
 
 
