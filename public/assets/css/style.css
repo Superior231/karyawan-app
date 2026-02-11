@@ -154,6 +154,9 @@ a {
 .btn-primary {
     background-color: var(--bs-primary);
 }
+.rounded {
+    border-radius: var(--radius-10) !important;
+}
 
 
 /* Navbar */
@@ -249,8 +252,17 @@ a {
 .card:hover {
   border-color: var(--bs-primary);
 }
+.card-not-hover:hover {
+  border-color: transparent;
+}
 .card .card-title {
   font-size: 18px;
+}
+
+
+/* Table */
+thead tr th {
+    border-color: transparent !important;
 }
 
 
@@ -276,7 +288,7 @@ section.profile .actions .card-body {
   padding: 25px 20px;
 }
 
-/* modal */
+/* Modal */
 .modal .modal-dialog .modal-content {
   border-radius: var(--radius-20) !important;
   border-color: transparent !important;

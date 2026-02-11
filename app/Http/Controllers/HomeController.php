@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('pages.home.index', [
-            'title' => 'Home',
+            'title' => 'Home - Karyawan App | PT Maju Jaya',
             'active' => 'home'
         ]);
     }

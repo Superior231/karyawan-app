@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a href="{{ route('home.index') }}" class="nav-link {{ $active == 'home' ? 'active fw-semibold' : '' }} px-4">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('position.index') }}" class="nav-link {{ $active == 'positions' ? 'active fw-semibold' : '' }} px-4">Positions</a>
+                </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
@@ -72,6 +75,12 @@
                 <a href="{{ route('home.index') }}" class="gap-2 d-flex align-items-center">
                     <i class='bx bxs-home fs-4'></i>
                     <span class="py-0 my-0">Home</span>
+                </a>
+            </li>
+            <li class="{{ $active == 'positions' ? 'active' : '' }}">
+                <a href="{{ route('position.index') }}" class="gap-2 d-flex align-items-center">
+                    <i class='bx bxs-label fs-4'></i>
+                    <span class="py-0 my-0">Positions</span>
                 </a>
             </li>
         </ul>

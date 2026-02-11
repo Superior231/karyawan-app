@@ -20,7 +20,7 @@ class ProfileController extends Controller
         $user = Auth::user();
         
         return view('pages.profile.index', [
-            'title' => 'My Profile',
+            'title' => 'My Profile - Karyawan App | PT Maju Jaya',
             'active' => 'profile',
             'user' => $user,
         ]);
