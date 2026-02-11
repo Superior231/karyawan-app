@@ -39,16 +39,16 @@ class EmployeeSeeder extends Seeder
             'email' => 'albert@example.com',
             'phone' => '0803127123',
             'address' => 'Jalan Raya, No. 123',
-            'status' => 'active',
+            'status' => 'inactive',
             'joined_at' => now()
         ]);
 
         Employee::create([
-            'name' => 'Hikmal Falah Agung Maulana',
+            'name' => 'Justina Xie Chuling',
             'position' => 'Data Scientist',
-            'email' => 'hikmalfalaha.m@example.com',
+            'email' => 'xcl0624@example.com',
             'phone' => '0803127123',
-            'address' => 'Jalan Raya, No. 123',
+            'address' => 'Chengdu, China',
             'status' => 'active',
             'joined_at' => now()
         ]);
